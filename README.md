@@ -1,4 +1,4 @@
-# Hello Git world
+# Hello Git world!
 一些「Git 版本控制系統」的學習資源
 
 * http://git-scm.com/book/zh-tw/v1
