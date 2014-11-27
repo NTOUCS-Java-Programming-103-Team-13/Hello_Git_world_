@@ -1,5 +1,7 @@
 # Hello Git world!
-一些「Git 版本控制系統」的學習資源
+
+## 其他資源
+這邊列舉一些其他的「Git 版本控制系統」的學習資源
 
 * [Pro Git](http://git-scm.com/book/zh-tw/)
 	* **官方** Git 介紹書籍（有中文翻譯版本）
