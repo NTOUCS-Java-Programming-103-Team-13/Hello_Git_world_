@@ -51,14 +51,46 @@ $ git-〈Git 命令名稱〉
 
 這兩種下命令的方式的效果都是相同的，本文中的內容將會使用 `$ git 〈Git 命令名稱〉` 的格式。
 
+### 使用 Git 版本控制系統時如何尋求幫助？
+#### 透過 `help` Git 命令 
+若不知道某 Git 命令要怎麼用（命令可接受的下命令格式，有哪些命令選項(options)可以改變它的行為等），我們可以使用 `git help 〈Git 命令名稱〉` 命令來察看該 Git 命令的 manpage 使用手冊頁面（manpage 為 manual page 的縮寫）。
 
+#### 察看 Pro Git
+[Pro Git](http://git-scm.com/book/zh-tw) 是由 Scott Chacon 和 Ben Straub 所著的 Git 官方教科書。
+
+#### 於 irc.freenode.net IRC 聊天室托管服務的 #git 頻道討論
+安裝一個 IRC 聊天室客戶端，連上 irc.freenode.net 站台再加入 #git 頻道即可參與 Git 相關的線上討論。
+
+### 編輯 Git 使用者帳號範圍的設定檔(git config)
+Git 有非常多種設定值可以改變它的行為，使用 `config` Git 命令可以編輯您的 Git 設定值，編輯使用者帳號範圍命令格式如下：
+```
+$ git config --global 〈設定值名稱〉 〈設定值內容（如果設定值內容包含「英式空白字元」的話整個參數要用引號括住才不會被殼程式錯誤地解釋為兩個分開的參數，詳細資訊請參考您使用的殼程式的使用手冊）〉
+```
+
+底下我們先設定一些必要的東西。
  
-#### 設定你的稱謂與電子郵件地址（git commit 操作預設需要此設定值有設定）
+#### 設定你的稱謂與電子郵件地址（此設定值設定好後才能提交新版本）
 於 Git 版本控制系統中每個版本都跟建立該版本的人的「身份」連結在一起，「身份」包含該人的稱謂（建議但不一定要是您的真名）跟電子郵件地址。
 
 於 Git 中通常身份會以 RFCXXX 規範的格式顯示，比方說
 ```
-Ｖ字龍 <Vdragon.Taiwan@gmail.com>
+Ｖ字龍(Vdragon Taiwan) <Vdragon.Taiwan@gmail.com>
+```
+
+使用下列命令設定您的稱謂跟電子郵件地址
+```
+$ git config --global user.name 〈您在 Git 中要使用的稱謂（如果內容包含空白字元的話整個參數要用引號括住才不會被殼程式錯誤地解釋為兩個分開的參數）〉
+$ git config --global user.email 〈您的電子郵件地址〉
+```
+
+比方說要設定前面
+```
+Ｖ字龍(Vdragon Taiwan) <Vdragon.Taiwan@gmail.com>
+```
+的身份的話就執行
+```
+$ git config --global user.name "Ｖ字龍(Vdragon Taiwan)"
+$ git config --global user.email Vdragon.Taiwan@gmail.com
 ```
 
 ### 初始化 Git 版本倉庫(git init)
